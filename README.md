@@ -1,4 +1,4 @@
-# CELLECT-ctc.ver-2024
+# CELLECT-ctc.ver-2024.10
 # CELLECT (Contrastive Embedding Learning for Large-scale Efficient Cell Tracking)
 
 This project contains the **CELLECT** cell tracking method used for the **Fluo-N3DH-CE** dataset in the Cell Tracking Challenge (CTC).
