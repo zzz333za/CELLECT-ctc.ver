@@ -1,0 +1,1 @@
+python ../infer.py --data_dir "../../../xm1/Fluo-N3DH-CE/test/02"  --out_dir  "../../../xm1/Fluo-N3DH-CE/02_RES/" --pretrained_weights1  "../../origin_sub/xmodel/U-ext+sc2n-199.0-8.0351.pth"   --pretrained_weights2     "../../origin_sub/xmodel/EX+sc2n-199.0-8.0351.pth"      --pretrained_weights3     "../../origin_sub/xmodel/EN+sc2n-199.0-8.0351.pth"       --overlapxy 128
