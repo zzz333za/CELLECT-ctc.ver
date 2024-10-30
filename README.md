@@ -14,7 +14,7 @@ This project contains the **CELLECT** cell tracking method used for the **Fluo-N
 
 To train the model, use the following command with the specified parameters:
 ```bash
-python ../train.py --data_dir "../../../xm1/Fluo-N3DH-CE/train" --out_dir "./Trained models/" --resolution_z <ratio_of_z_to_xy> --patch_size_xy <xy_patch_size> --patch_size_z <z_patch_size> --noise <max_noise_variance>
+python ../train.py --data_dir "../../../xm1/Fluo-N3DH-CE/train" --out_dir "./Trained models/" --resolution_z 10 --patch_size_xy 256 --patch_size_z 31 --noise 100
 ```
 Training Parameters  
 data_dir : Path to the training data folder  
@@ -28,7 +28,7 @@ noise : Maximum variance of white noise
 
 To run inference, use the following command with the specified parameters:
 ```bash
-python ../infer.py --data_dir "../../../xm1/Fluo-N3DH-CE/test/02" --out_dir "../../../xm1/Fluo-N3DH-CE/02_RES/" --pretrained_weights1 "../../origin_sub/xmodel/U-ext+sc2n-199.0-8.0351.pth" --pretrained_weights2 "../../origin_sub/xmodel/EX+sc2n-199.0-8.0351.pth" --pretrained_weights3 "../../origin_sub/xmodel/EN+sc2n-199.0-8.0351.pth" --resolution_z <ratio_of_z_to_xy> --patch_size_xy <xy_patch_size> --patch_size_z <z_patch_size> --overlapxy <xy_overlap_size> --overlapz <z_overlap_size>
+python ../infer.py --data_dir "../../../xm1/Fluo-N3DH-CE/test/02" --out_dir "../../../xm1/Fluo-N3DH-CE/02_RES/" --pretrained_weights1 "../../origin_sub/xmodel/U-ext+sc2n-199.0-8.0351.pth" --pretrained_weights2 "../../origin_sub/xmodel/EX+sc2n-199.0-8.0351.pth" --pretrained_weights3 "../../origin_sub/xmodel/EN+sc2n-199.0-8.0351.pth" --resolution_z 10 --patch_size_xy 256 --patch_size_z 31 --overlapxy 128 --overlapz 4
 ```
 
 Inference Parameters  
