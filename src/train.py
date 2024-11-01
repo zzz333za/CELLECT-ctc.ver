@@ -342,7 +342,7 @@ class IntracranialDataset(Dataset):
         t31=K3[g]#rget(t6.copy())
         t32=K3[g2]#rget(t16.copy())
         pa,pb,pc=args.patch_size_xy,args.patch_size_xy,args.patch_size_z
-        xa,xb,xc=random.randint(10,t.shape[0]-pa-10),random.randint(10,t.shape[1]-pb-10 ),random.randint(0,max(0,t.shape[2]-pc) )
+        xa,xb,xc=random.randint(0,t.shape[0]-pa-0),random.randint(0,t.shape[1]-pb-0 ),random.randint(0,max(0,t.shape[2]-pc) )
        
         
         #print(xa,xb,xc,img.shape)
@@ -629,7 +629,7 @@ oEX = optim.Adam(plist)#EXP=torch.load('../track-data/model//EXP+-25.0-1.9528.pt
 plist = [{'params': EN.parameters(), 'lr': 2e-4}]
 oEN = optim.Adam(plist)#EXP=torch.load('../track-data/model//EXP+-25.0-1.9528.pth')
 
-weights = torch.tensor([1.0,16.0]).cuda()
+weights = torch.tensor([1.0,4.0]).cuda()
 criterion = torch.nn.CrossEntropyLoss(reduction='none',weight=weights)
 weights2 = torch.tensor([1.0, 4.0,1.0]).cuda()
 criterion3 = torch.nn.CrossEntropyLoss(reduction='none',weight=weights2)
