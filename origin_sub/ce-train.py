@@ -599,7 +599,7 @@ oEX = optim.Adam(plist)#EXP=torch.load('../track-data/model//EXP+-25.0-1.9528.pt
 plist = [{'params': EN.parameters(), 'lr': 2e-4}]
 oEN = optim.Adam(plist)#EXP=torch.load('../track-data/model//EXP+-25.0-1.9528.pth')
 
-weights = torch.tensor([1.0,8.0]).cuda()
+weights = torch.tensor([1.0,4.0]).cuda()
 criterion = torch.nn.CrossEntropyLoss(reduction='none',weight=weights)
 weights2 = torch.tensor([1.0, 4.0,1.0]).cuda()
 criterion3 = torch.nn.CrossEntropyLoss(reduction='none',weight=weights2)
