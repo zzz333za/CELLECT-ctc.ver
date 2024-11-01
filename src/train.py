@@ -790,7 +790,7 @@ for epoch in range(0,n_epochs):
     print('-' * 10)
 
     U.train()
-    if epoch<6 or    (epoch>35 and epoch<=40) :
+    if epoch<6 or    (epoch>15 and epoch<=20) or    (epoch>35 and epoch<=40) :
         EX.train()
         EN.train()
     
