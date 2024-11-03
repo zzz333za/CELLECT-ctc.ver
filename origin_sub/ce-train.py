@@ -1304,7 +1304,7 @@ for epoch in range(0,n_epochs):
 
 ######################################################
                               
-        loss=Uloss*5+sloss+sloss1
+        loss=Uloss+sloss+sloss1
         if rloss3==rloss3 and rloss3>0:
             loss+=rloss3*2   
             #print(epoch,rloss3.item())
@@ -1314,7 +1314,7 @@ for epoch in range(0,n_epochs):
             kloss=torch.mean(torch.cat(kloss)) 
             kk+=kloss.item()
         if kloss==kloss:
-            loss+=kloss*10 
+            loss+=kloss*2 
         tr_loss += loss.item()
         
  
