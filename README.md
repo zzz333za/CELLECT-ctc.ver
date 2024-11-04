@@ -1,10 +1,19 @@
 # CELLECT-ctc.ver-2024.10
 # CELLECT (Contrastive Embedding Learning for Large-scale Efficient Cell Tracking)
+The CELLECT tracking framework is designed to extract cell center points from images along with feature vectors representing these points. By incorporating contrastive learning optimization, CELLECT ensures each cell is represented by a distinct feature vector. After training, cell similarity is evaluated based on the distances between their corresponding feature vectors.
+
+The framework comprises three main models:
+1. A primary U-Net model, which takes two consecutive frames as input to extract cell segmentations, center points, features, size estimations, and division estimations.
+2. An MLP model to evaluate whether multiple cells within the same frame belong to the same cell.
+3. A second MLP model to determine whether cells across frames are the same or originate from the same cell, as well as to identify cell division events.
 
 This project contains the **CELLECT** cell tracking method used for the **Fluo-N3DH-CE** dataset in the Cell Tracking Challenge (CTC).
 
 ![CELLECT Image](https://github.com/zzz333za/CELLECT-ctc.ver_2024.10/raw/main/CELLECT.png)
 
+### Requirements
+
+To ensure compatibility, please use the following software versions:
 - **CUDA Version**: 12.4  
 - **Python Version**: 3.11.7
 - **torch**==2.3.1
