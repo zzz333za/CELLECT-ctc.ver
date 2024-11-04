@@ -6,13 +6,16 @@ This project contains the **CELLECT** cell tracking method used for the **Fluo-N
 ![CELLECT Image](https://github.com/zzz333za/CELLECT-ctc.ver_2024.10/raw/main/CELLECT.png)
 
 - **CUDA Version**: 12.4  
-- **Python Version**: 3.11.7  
+- **Python Version**: 3.11.7
+- **torch**==2.3.1
+
+
 
 ## Running Instructions
 ###Install required packages by running:
 
 ```bash
-pip install -r requirements.txt
+pip install -r src/requirements.txt
 ```
 
 ### Data Format and Folder Structure
