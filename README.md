@@ -21,7 +21,8 @@ To ensure compatibility, please use the following software versions:
 
 
 ## Running Instructions
-###Install required packages by running:
+
+### Install required packages by running:
 
 ```bash
 pip install -r src/requirements.txt
