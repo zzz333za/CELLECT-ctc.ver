@@ -47,17 +47,17 @@ DATA/
         └── 02/
 ```
 
-Fluo-N3DH-CE: Root folder for the dataset.
-train: Folder containing the training data.
-01: Raw training images for the first dataset.
-01_GT: Ground truth annotations for the first dataset.
-01_ST: Silver-standard annotations for the first dataset.
-02: Raw training images for the second dataset.
-02_GT: Ground truth annotations for the second dataset.
-02_ST: Silver-standard annotations for the second dataset.
-test: Folder containing the test data.
-01: Raw test images for the first test dataset.
-02: Raw test images for the second test dataset.
+Fluo-N3DH-CE: Root folder for the dataset.  
+train: Folder containing the training data.  
+01: Raw training images for the first dataset.  
+01_GT: Ground truth annotations for the first dataset.   
+01_ST: Silver-standard annotations for the first dataset.  
+02: Raw training images for the second dataset.  
+02_GT: Ground truth annotations for the second dataset.  
+02_ST: Silver-standard annotations for the second dataset.  
+test: Folder containing the test data.  
+01: Raw test images for the first test dataset.  
+02: Raw test images for the second test dataset.  
 
 Annotations (GT and ST) Explanation
 The GT and ST folders in the dataset contain specific types of annotations used for training and evaluating cell tracking performance:
