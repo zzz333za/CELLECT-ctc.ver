@@ -228,6 +228,7 @@ for i in tqdm(range(max(kh1,kh2))):
         K3[vD[i]]=rget(tim(Image.open(dpath+'/02_ST/SEG/man_seg'+vD[i].split('/')[-1][1:])))
 img3= KK[D[0]]          
 if img3.max()>255:
+    print('pa=log')
     def pa(x):
         return torch.log1p(x)
 else:
@@ -790,7 +791,7 @@ for epoch in range(0,n_epochs):
     print('-' * 10)
 
     U.train()
-    if epoch<6 or    (epoch>15 and epoch<=20) or    (epoch>35 and epoch<=40) :
+    if epoch<6  or    (epoch>15 and epoch<=20)or    (epoch>35 and epoch<=40) :
         EX.train()
         EN.train()
     
