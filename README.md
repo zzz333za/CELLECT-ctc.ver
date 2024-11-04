@@ -29,7 +29,7 @@ pip install -r src/requirements.txt
 
 ### Data Format and Folder Structure
 
-To perform training, testing, or inference, organize the dataset as follows:
+To perform training, testing, or inference, organize the dataset as follows: [Cell Tracking Challenge prepare their algorithms in a reusable form](http://public.celltrackingchallenge.net/documents/Guidelines%20for%20submission%20reusability.pdf）
 
 ```plaintext
 DATA/
