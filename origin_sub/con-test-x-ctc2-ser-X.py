@@ -1215,21 +1215,21 @@ for step, batch in enumerate(tk0):
                 q=torch.cat([q,q[:,-1].unsqueeze(-1)],1)
                 qx=torch.cat([qx,qx[:,-1].unsqueeze(-1)],1)          
                        
-        # else:
-        #     nq=[]
-        #     for i in q:
-        #         l=[]
-        #         no=[]
-        #         for j in i:
-        #             if j not in no:
-        #                 l.append(j.unsqueeze(0))
-        #                 no+=dx2ex[j.item()]
-        #             if len(l)==5:
-        #                 break
-        #         while len(l)<5:
-        #           l.append(l[-1])  
-        #         nq.append(torch.concat(l).unsqueeze(0))
-        #     q=torch.concat(nq)   
+        else:
+            nq=[]
+            for i in q:
+                l=[]
+                no=[]
+                for j in i:
+                    if j not in no:
+                        l.append(j.unsqueeze(0))
+                        no+=dx2ex[j.item()]
+                    if len(l)==5:
+                        break
+                while len(l)<5:
+                  l.append(l[-1])  
+                nq.append(torch.concat(l).unsqueeze(0))
+            q=torch.concat(nq)   
    
         ey=[]
         ep=[]
@@ -1618,7 +1618,7 @@ for step, batch in enumerate(tk0):
                         ta=cx[jj[0],jj[1],jj[2]//10]
                         q1=np.zeros(pic.shape)
                         q2=np.zeros(pic.shape)
-                        q1=fill(q1,jj[0],jj[1],jj[2]//10,v=1,s=min(50,max(16,s1[j].item())//1))
+                        q1=fill(q1,jj[0],jj[1],jj[2]//10,v=1,s=min(50,max(18,s1[j].item())//1))
                         q2=fill(q2,jj[0],jj[1],jj[2]//10,v=1,s=1)
                         tt=cx==ta
                         q1=q1*tt*(pic==0)+q2
@@ -1693,7 +1693,7 @@ for step, batch in enumerate(tk0):
                     q1=np.zeros(pic.shape)
                     q2=np.zeros(pic.shape)
                     q1=fill(q1,jj[0],jj[1],jj[2]//10,v=1,s=min(50,max(18,s2[dj[0]].item())//1))
-                    q2=fill(q2,jj[0],jj[1],jj[2]//10,v=1,s=10)
+                    q2=fill(q2,jj[0],jj[1],jj[2]//10,v=1,s=11)
                     tt=cx==ta
                     q1=q1*tt*(pic==0)+q2
                     pic[q1>0]=mid[j]
@@ -1717,7 +1717,7 @@ for step, batch in enumerate(tk0):
                         q1=np.zeros(pic.shape)
                         q2=np.zeros(pic.shape)
                         q1=fill(q1,jj[0],jj[1],jj[2]//10,v=1,s=min(50,max(18,s2[dj[0]].item())//1))
-                        q2=fill(q2,jj[0],jj[1],jj[2]//10,v=1,s=10)
+                        q2=fill(q2,jj[0],jj[1],jj[2]//10,v=1,s=11)
                         tt=cx==ta
                         q1=q1*tt*(pic==0)+q2
                         pic[q1>0]=nid+1
@@ -1733,7 +1733,7 @@ for step, batch in enumerate(tk0):
                             q1=np.zeros(pic.shape)
                             q2=np.zeros(pic.shape)
                             q1=fill(q1,jj[0],jj[1],jj[2]//10,v=1,s=min(50,max(18,s2[dj[0]].item())//1))
-                            q2=fill(q2,jj[0],jj[1],jj[2]//10,v=1,s=10)
+                            q2=fill(q2,jj[0],jj[1],jj[2]//10,v=1,s=11)
                             tt=cx==ta
                             q1=q1*tt*(pic==0)+q2
                             pic[q1>0]=nid+1
