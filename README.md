@@ -1,4 +1,4 @@
-# CELLECT-ctc.ver-2024.10
+# CELLECT-ctc.ver-2024.11
 # CELLECT (Contrastive Embedding Learning for Large-scale Efficient Cell Tracking)
 The CELLECT tracking framework is designed to extract cell center points from images along with feature vectors representing these points. By incorporating contrastive learning optimization, CELLECT ensures each cell is represented by a distinct feature vector. After training, cell similarity is evaluated based on the distances between their corresponding feature vectors.
 
