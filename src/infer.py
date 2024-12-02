@@ -1,30 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Aug  2 15:20:41 2023
-
-@author: Admin
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jun 23 03:23:15 2023
-
-@author: Admin
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 27 12:29:59 2023
-
-@author: zzz333-pc
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 27 14:25:14 2022
-
-@author: zzz333-pc
-"""
 
 
 import os
@@ -1156,21 +1129,21 @@ for step, batch in enumerate(tk0):
                 q=torch.cat([q,q[:,-1].unsqueeze(-1)],1)
                 qx=torch.cat([qx,qx[:,-1].unsqueeze(-1)],1)          
                        
-        # else:
-        #     nq=[]
-        #     for i in q:
-        #         l=[]
-        #         no=[]
-        #         for j in i:
-        #             if j not in no:
-        #                 l.append(j.unsqueeze(0))
-        #                 no+=dx2ex[j.item()]
-        #             if len(l)==5:
-        #                 break
-        #         while len(l)<5:
-        #           l.append(l[-1])  
-        #         nq.append(torch.concat(l).unsqueeze(0))
-        #     q=torch.concat(nq)   
+        else:
+            nq=[]
+            for i in q:
+                l=[]
+                no=[]
+                for j in i:
+                    if j not in no:
+                        l.append(j.unsqueeze(0))
+                        no+=dx2ex[j.item()]
+                    if len(l)==5:
+                        break
+                while len(l)<5:
+                  l.append(l[-1])  
+                nq.append(torch.concat(l).unsqueeze(0))
+            q=torch.concat(nq)   
    
         ey=[]
         ep=[]
@@ -1546,7 +1519,7 @@ for step, batch in enumerate(tk0):
                         ta=cx[jj[0],jj[1],jj[2]//ZS]
                         q1=np.zeros(pic.shape)
                         q2=np.zeros(pic.shape)
-                        q1=fill(q1,jj[0],jj[1],jj[2]//ZS,v=1,s=min(50,max(10,s1[j].item())//1))
+                        q1=fill(q1,jj[0],jj[1],jj[2]//ZS,v=1,s=min(50,max(18,s1[j].item())//1))
                         q2=fill(q2,jj[0],jj[1],jj[2]//ZS,v=1,s=1)
                         tt=cx==ta
                         q1=q1*tt*(pic==0)+q2
@@ -1620,8 +1593,8 @@ for step, batch in enumerate(tk0):
                 if 1:#ta in ct:
                     q1=np.zeros(pic.shape)
                     q2=np.zeros(pic.shape)
-                    q1=fill(q1,jj[0],jj[1],jj[2]//ZS,v=1,s=min(50,max(10,s2[dj[0]].item())//1))
-                    q2=fill(q2,jj[0],jj[1],jj[2]//ZS,v=1,s=3)
+                    q1=fill(q1,jj[0],jj[1],jj[2]//ZS,v=1,s=min(50,max(18,s2[dj[0]].item())//1))
+                    q2=fill(q2,jj[0],jj[1],jj[2]//ZS,v=1,s=11)
                     tt=cx==ta
                     q1=q1*tt*(pic==0)+q2
                     pic[q1>0]=mid[j]
@@ -1644,8 +1617,8 @@ for step, batch in enumerate(tk0):
                    
                         q1=np.zeros(pic.shape)
                         q2=np.zeros(pic.shape)
-                        q1=fill(q1,jj[0],jj[1],jj[2]//ZS,v=1,s=min(50,max(10,s2[dj[0]].item())//1))
-                        q2=fill(q2,jj[0],jj[1],jj[2]//ZS,v=1,s=1)
+                        q1=fill(q1,jj[0],jj[1],jj[2]//ZS,v=1,s=min(50,max(18,s2[dj[0]].item())//1))
+                        q2=fill(q2,jj[0],jj[1],jj[2]//ZS,v=1,s=11)
                         tt=cx==ta
                         q1=q1*tt*(pic==0)+q2
                         pic[q1>0]=nid+1
@@ -1660,8 +1633,8 @@ for step, batch in enumerate(tk0):
                         if 1:#ta in ct:
                             q1=np.zeros(pic.shape)
                             q2=np.zeros(pic.shape)
-                            q1=fill(q1,jj[0],jj[1],jj[2]//ZS,v=1,s=min(50,max(10,s2[dj[0]].item())//1))
-                            q2=fill(q2,jj[0],jj[1],jj[2]//ZS,v=1,s=1)
+                            q1=fill(q1,jj[0],jj[1],jj[2]//ZS,v=1,s=min(50,max(18,s2[dj[0]].item())//1))
+                            q2=fill(q2,jj[0],jj[1],jj[2]//ZS,v=1,s=11)
                             tt=cx==ta
                             q1=q1*tt*(pic==0)+q2
                             pic[q1>0]=nid+1
@@ -1903,7 +1876,7 @@ for i in nkd:
             print(i,nkd[i])
             ff=1
         for j in nkd[i].copy():
-            if ns.get(j,0)<kh-5 and nl.get(j,-1)<=2 and (ne.get(j,0)<kh and len(nkd.get(j,[]))<1):
+            if ns.get(j,0)<kh-5 and nl.get(j,-1)<=0 and (ne.get(j,0)<kh and len(nkd.get(j,[]))<1):
              
                 nkd[i].remove(j)
                 fno.append(j)
