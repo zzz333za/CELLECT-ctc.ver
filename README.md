@@ -89,7 +89,7 @@ noise : Maximum variance of white noise
 
 To run inference, use the following command with the specified parameters:
 ```bash
-python ../infer.py --data_dir "../../DATA/Fluo-N3DH-CE/test/02" --out_dir "../../DATA/Fluo-N3DH-CE/02_RES/" --pretrained_weights1 "../../origin_sub/xmodel/U-ext+sc2n-199.0-8.0351.pth" --pretrained_weights2 "../../origin_sub/xmodel/EX+sc2n-199.0-8.0351.pth" --pretrained_weights3 "../../origin_sub/xmodel/EN+sc2n-199.0-8.0351.pth" --resolution_z 10 --patch_size_xy 256 --patch_size_z 31 --overlapxy 128 --overlapz 4
+python ../infer.py --data_dir "../../DATA/Fluo-N3DH-CE/test/02" --out_dir "../../DATA/Fluo-N3DH-CE/02_RES/" --pretrained_weights1 "../../origin_sub/xmodel/U-ext+sc2n-199.0-8.0351.pth" --pretrained_weights2 "../../origin_sub/xmodel/EX+sc2n-199.0-8.0351.pth" --pretrained_weights3 "../../origin_sub/xmodel/EN+sc2n-199.0-8.0351.pth" --resolution_z 10 --patch_size_xy 256 --patch_size_z 31 --overlapxy 16 --overlapz 4
 ```
 
 Inference Parameters  
