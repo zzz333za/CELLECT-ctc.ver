@@ -8,6 +8,8 @@ tifffile==2020.9.3
 torch==2.3.1
 pandas==2.1.4
 opencv-python==4.10.0.82
-
+tqdm
+scikit-learn
+ipywidgets
 
 
