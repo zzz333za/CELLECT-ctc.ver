@@ -29,23 +29,20 @@ from sklearn.model_selection import train_test_split
 from tqdm import tqdm as ttm
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.autograd import Variable
-import torch.backends.cudnn as cudnn
+
 import warnings
 from random import randint
 warnings.filterwarnings("ignore")
 
 import collections
-from pprint import pprint
+
 import numpy as np
 import pandas as pd
 from skimage import measure
 from skimage.measure import label,regionprops
 import cv2
 import numpy as np
-from PIL import Image
-from matplotlib import pyplot as plt
-from ipywidgets import interact
+
 from scipy.ndimage import rotate,zoom
 from skimage.registration import phase_cross_correlation
 from skimage.registration._phase_cross_correlation import _upsampled_dft
@@ -58,11 +55,9 @@ from recoloss import CrossEntropyLabelSmooth,TripletLoss
 #import lovasz_losses as L
 import random
 import time
-from sklearn.model_selection import KFold
-from unetext3Dn_con7s import UNet3D
-import torch.distributed as dist
 
-from torch.utils.data.distributed import DistributedSampler
+from unetext3Dn_con7s import UNet3D
+
 import argparse
 
 # 创建解析器
@@ -1793,6 +1788,8 @@ for epoch in range(0,n_epochs):
         print('val Loss: {:.4f},uloss:{:.4f},kloss:{:.4f}'.format(np.mean(epoch_loss),np.mean(se/ len(data_loader_val)),np.mean(kk/ len(data_loader_val))))
         if  epoch >2:
             va=epoch_loss
+            if not os.path.exists(args.out_dir):
+                os.makedirs(args.out_dir, exist_ok=True)
             torch.save(EX.state_dict(),args.out_dir+'/EX+sc2n-{:.1f}.pth'.format(epoch))
             torch.save(EN.state_dict(),args.out_dir+'/EN+sc2n-{:.1f}.pth'.format(epoch))
             torch.save(U.state_dict(),args.out_dir+'/U-ext+sc2n-{:.1f}.pth'.format(epoch))
